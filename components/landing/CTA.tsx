@@ -4,6 +4,9 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const ParticleVortex = dynamic(() => import("@/components/three/ParticleVortex"), { ssr: false });
 
 export default function CTA() {
   const ref = useRef(null);
@@ -11,6 +14,8 @@ export default function CTA() {
 
   return (
     <section className="relative py-24 sm:py-32 bg-[#09090B] overflow-hidden">
+      {/* 3D Particle Vortex */}
+      <ParticleVortex />
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div

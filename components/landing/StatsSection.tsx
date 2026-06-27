@@ -3,6 +3,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Database, Users, Activity, Ban } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const FloatingShapes = dynamic(() => import("@/components/three/FloatingShapes"), { ssr: false });
 
 const stats = [
   { icon: Database, value: 12000000, suffix: "+", label: "GB Delivered", prefix: "" },
@@ -77,6 +80,7 @@ export default function StatsSection() {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#7C3AED]/5 blur-[120px] rounded-full" />
       </div>
+      <FloatingShapes />
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

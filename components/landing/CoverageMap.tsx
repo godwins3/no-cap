@@ -3,62 +3,17 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { MapPin, Signal, Wifi, Activity } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const GlobeScene = dynamic(() => import("@/components/three/GlobeScene"), { ssr: false });
 
 const cities = [
-  { name: "Nairobi", x: 52, y: 55, coverage: 98, speed: "95 Mbps", status: "Excellent" },
-  { name: "Mombasa", x: 60, y: 72, coverage: 95, speed: "85 Mbps", status: "Excellent" },
-  { name: "Kisumu", x: 35, y: 48, coverage: 92, speed: "75 Mbps", status: "Strong" },
-  { name: "Nakuru", x: 45, y: 48, coverage: 94, speed: "80 Mbps", status: "Excellent" },
-  { name: "Eldoret", x: 40, y: 38, coverage: 90, speed: "70 Mbps", status: "Strong" },
+  { name: "Nairobi", coverage: 98, speed: "95 Mbps", status: "Excellent" },
+  { name: "Mombasa", coverage: 95, speed: "85 Mbps", status: "Excellent" },
+  { name: "Kisumu", coverage: 92, speed: "75 Mbps", status: "Strong" },
+  { name: "Nakuru", coverage: 94, speed: "80 Mbps", status: "Excellent" },
+  { name: "Eldoret", coverage: 90, speed: "70 Mbps", status: "Strong" },
 ];
-
-function CityPin({
-  city,
-  index,
-  isSelected,
-  onSelect,
-}: {
-  city: (typeof cities)[0];
-  index: number;
-  isSelected: boolean;
-  onSelect: () => void;
-}) {
-  return (
-    <motion.button
-      className="absolute group"
-      style={{ left: `${city.x}%`, top: `${city.y}%` }}
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 0.5 + index * 0.1, type: "spring" }}
-      onClick={onSelect}
-      aria-label={`Select ${city.name}`}
-    >
-      {/* Pulse ring */}
-      <motion.div
-        className="absolute inset-0 -m-3 rounded-full bg-[#00FF88]/20"
-        animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-        transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
-      />
-
-      {/* Pin */}
-      <div
-        className={`relative w-4 h-4 rounded-full transition-all cursor-pointer ${
-          isSelected
-            ? "bg-[#00FF88] shadow-[0_0_15px_rgba(0,255,136,0.5)]"
-            : "bg-[#00FF88]/60 group-hover:bg-[#00FF88] group-hover:shadow-[0_0_10px_rgba(0,255,136,0.3)]"
-        }`}
-      >
-        <div className="absolute inset-1 rounded-full bg-[#09090B]" />
-        <div className="absolute inset-[5px] rounded-full bg-[#00FF88]" />
-      </div>
-
-      {/* Label */}
-      <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-white/60 whitespace-nowrap font-medium group-hover:text-white transition-colors">
-        {city.name}
-      </span>
-    </motion.button>
-  );
-}
 
 export default function CoverageMap() {
   const ref = useRef(null);
@@ -102,49 +57,14 @@ export default function CoverageMap() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Map */}
+          {/* 3D Globe */}
           <motion.div
-            className="relative aspect-square max-w-md mx-auto w-full"
+            className="relative w-full"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            {/* Kenya outline (simplified) */}
-            <div className="absolute inset-0 rounded-3xl bg-white/[0.02] border border-white/[0.06] overflow-hidden">
-              {/* Grid pattern */}
-              <div
-                className="absolute inset-0 opacity-5"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle, rgba(0,255,136,0.3) 1px, transparent 1px)",
-                  backgroundSize: "20px 20px",
-                }}
-              />
-
-              {/* Country shape hint */}
-              <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full opacity-10">
-                <path
-                  d="M30 20 L55 15 L70 25 L75 35 L65 50 L70 65 L60 80 L45 85 L35 75 L25 60 L30 45 L28 30 Z"
-                  fill="none"
-                  stroke="#00FF88"
-                  strokeWidth="0.5"
-                />
-              </svg>
-
-              {/* Coverage gradient */}
-              <div className="absolute inset-0 bg-gradient-to-b from-[#00FF88]/5 via-transparent to-[#06B6D4]/5 rounded-3xl" />
-
-              {/* City pins */}
-              {cities.map((c, i) => (
-                <CityPin
-                  key={c.name}
-                  city={c}
-                  index={i}
-                  isSelected={i === selectedCity}
-                  onSelect={() => setSelectedCity(i)}
-                />
-              ))}
-            </div>
+            <GlobeScene />
           </motion.div>
 
           {/* City details */}
