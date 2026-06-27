@@ -75,7 +75,7 @@ export default function StatsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative py-24 sm:py-32 bg-[#09090B] overflow-hidden">
+    <section data-section="stats" className="relative py-24 sm:py-32 bg-[#09090B] overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#7C3AED]/5 blur-[120px] rounded-full" />

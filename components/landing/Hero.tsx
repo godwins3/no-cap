@@ -4,9 +4,6 @@ import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Wifi, Shield, Zap, Clock, TrendingUp } from "lucide-react";
-import dynamic from "next/dynamic";
-
-const HeroScene = dynamic(() => import("@/components/three/HeroScene"), { ssr: false });
 
 function FloatingParticles() {
   return (
@@ -353,8 +350,6 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#09090B]">
       <GridBackground />
-      <FloatingParticles />
-      <HeroScene />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <AnimatePresence mode="wait">

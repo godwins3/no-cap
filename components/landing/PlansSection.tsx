@@ -1,9 +1,12 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Check, Zap, Flame, Crown } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const PlanSelect3D = dynamic(() => import("@/components/three/PlanSelect3D"), { ssr: false });
 
 const plans = [
   {
@@ -146,9 +149,10 @@ function PlanCard({
 export default function PlansSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [activePlan, setActivePlan] = useState(1);
 
   return (
-    <section id="plans" className="relative py-24 sm:py-32 bg-[#09090B]">
+    <section id="plans" data-section="plans" className="relative py-24 sm:py-32 bg-[#09090B]">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-[#00FF88]/[0.02] blur-[150px] rounded-full" />
       </div>
@@ -181,6 +185,19 @@ export default function PlansSection() {
             Every plan includes unlimited data that never expires.
           </motion.p>
         </div>
+
+        {/* 3D Character Select */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="mb-12"
+        >
+          <p className="text-center text-white/30 text-xs font-mono uppercase tracking-widest mb-4">
+            ⚡ Select your fighter — tap to choose ⚡
+          </p>
+          <PlanSelect3D activePlan={activePlan} onSelectPlan={setActivePlan} />
+        </motion.div>
 
         {/* Plans grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">

@@ -23,7 +23,7 @@ export default function CoverageMap() {
   const city = cities[selectedCity];
 
   return (
-    <section id="coverage" className="relative py-24 sm:py-32 bg-[#09090B]">
+    <section id="coverage" data-section="coverage" className="relative py-24 sm:py-32 bg-[#09090B]">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-[#06B6D4]/5 blur-[120px] rounded-full" />
       </div>

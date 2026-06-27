@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import dynamic from "next/dynamic";
+
+const XPCounter = dynamic(() => import("@/components/gamification/XPCounter"), { ssr: false });
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -59,6 +62,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
+            <XPCounter />
             <Button variant="ghost" size="sm">
               Join Waitlist
             </Button>

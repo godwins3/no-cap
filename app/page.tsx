@@ -13,10 +13,13 @@ const Testimonials = dynamic(() => import("@/components/landing/Testimonials"));
 const FAQ = dynamic(() => import("@/components/landing/FAQ"));
 const CTA = dynamic(() => import("@/components/landing/CTA"));
 const Footer = dynamic(() => import("@/components/landing/Footer"));
+const ComboCounter = dynamic(() => import("@/components/gamification/ComboCounter"));
+const FullPageHighway = dynamic(() => import("@/components/three/FullPageHighway"));
 
 export default function Home() {
   return (
-    <main className="flex-1">
+    <main className="flex-1 relative">
+      <FullPageHighway />
       <Navbar />
       <Hero />
       <ProblemSection />
@@ -30,6 +33,7 @@ export default function Home() {
       <FAQ />
       <CTA />
       <Footer />
+      <ComboCounter />
     </main>
   );
 }

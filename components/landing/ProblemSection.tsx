@@ -10,6 +10,9 @@ import {
   Shield,
   HelpCircle,
 } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const BundleDestroyer = dynamic(() => import("@/components/three/BundleDestroyer"), { ssr: false });
 
 const problems = [
   {
@@ -123,7 +126,7 @@ export default function ProblemSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="features" className="relative py-24 sm:py-32 bg-[#09090B]">
+    <section id="features" data-section="problem" className="relative py-24 sm:py-32 bg-[#09090B]">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/[0.02] to-transparent pointer-events-none" />
 
@@ -168,6 +171,21 @@ export default function ProblemSection() {
             <ProblemCard key={problem.title} problem={problem} index={i} />
           ))}
         </div>
+
+        {/* Bundle Destroyer Mini-Game */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="text-center mb-6">
+            <p className="text-white/40 text-sm uppercase tracking-wider font-mono">
+              Tired of expiry? Take it out on these bundles 👇
+            </p>
+          </div>
+          <BundleDestroyer />
+        </motion.div>
       </div>
     </section>
   );
