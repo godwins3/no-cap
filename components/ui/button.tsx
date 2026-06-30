@@ -15,15 +15,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cn(
           "relative inline-flex items-center justify-center font-semibold rounded-full transition-all duration-300 cursor-pointer",
-          "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00FF88] focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B]",
+          "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B]",
           {
-            "bg-[#00FF88] text-[#09090B] hover:bg-[#00FF88]/90 hover:shadow-[0_0_30px_rgba(0,255,136,0.3)] active:scale-95":
+            "bg-[#F97316] text-[#09090B] hover:bg-[#F97316]/90 hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] active:scale-95":
               variant === "primary",
             "bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/40 backdrop-blur-sm active:scale-95":
               variant === "secondary",
             "text-white/70 hover:text-white hover:bg-white/5 active:scale-95":
               variant === "ghost",
-            "border border-[#00FF88]/50 text-[#00FF88] hover:bg-[#00FF88]/10 hover:border-[#00FF88] active:scale-95":
+            "border border-[#F97316]/50 text-[#F97316] hover:bg-[#F97316]/10 hover:border-[#F97316] active:scale-95":
               variant === "outline",
           },
           {

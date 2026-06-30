@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Wifi, Shield, Zap, Clock, TrendingUp } from "lucide-react";
+import GetEsimButton from "@/components/landing/GetEsimButton";
 
 function FloatingParticles() {
   return (
@@ -11,7 +12,7 @@ function FloatingParticles() {
       {Array.from({ length: 40 }).map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 rounded-full bg-[#00FF88]/30"
+          className="absolute w-1 h-1 rounded-full bg-[#F97316]/30"
           initial={{
             x: `${Math.random() * 100}%`,
             y: `${Math.random() * 100}%`,
@@ -33,7 +34,7 @@ function FloatingParticles() {
       {Array.from({ length: 8 }).map((_, i) => (
         <motion.div
           key={`line-${i}`}
-          className="absolute h-px bg-gradient-to-r from-transparent via-[#06B6D4]/20 to-transparent"
+          className="absolute h-px bg-gradient-to-r from-transparent via-[#EA580C]/20 to-transparent"
           style={{
             width: `${Math.random() * 300 + 100}px`,
             top: `${Math.random() * 100}%`,
@@ -69,7 +70,7 @@ function GridBackground() {
       />
       {/* Aurora gradient */}
       <motion.div
-        className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-[#7C3AED]/10 blur-[120px]"
+        className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-[#1a1a1a]/10 blur-[120px]"
         animate={{
           x: [0, 100, -50, 0],
           y: [0, -50, 50, 0],
@@ -78,7 +79,7 @@ function GridBackground() {
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
       />
       <motion.div
-        className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-[#06B6D4]/8 blur-[100px]"
+        className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-[#EA580C]/8 blur-[100px]"
         animate={{
           x: [0, -80, 60, 0],
           y: [0, 60, -40, 0],
@@ -87,7 +88,7 @@ function GridBackground() {
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
       />
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-[#00FF88]/5 blur-[150px]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-[#F97316]/5 blur-[150px]"
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.3, 0.6, 0.3],
@@ -158,7 +159,7 @@ function ShatterTimer({ onComplete }: { onComplete: () => void }) {
           }`}
           style={{
             textShadow: isGlitching
-              ? "2px 0 #ff0000, -2px 0 #00ff88, 0 2px #06B6D4"
+              ? "2px 0 #ff0000, -2px 0 #F97316, 0 2px #EA580C"
               : timeLeft <= 2
               ? "0 0 20px rgba(255,0,0,0.5)"
               : "none",
@@ -279,8 +280,8 @@ function PhoneMockup() {
           </div>
 
           {/* Plan info */}
-          <div className="bg-gradient-to-br from-[#00FF88]/10 to-[#06B6D4]/10 rounded-2xl p-4 border border-[#00FF88]/20 mb-4">
-            <p className="text-[#00FF88] text-xs font-medium mb-1">ACTIVE PLAN</p>
+          <div className="bg-gradient-to-br from-[#F97316]/10 to-[#EA580C]/10 rounded-2xl p-4 border border-[#F97316]/20 mb-4">
+            <p className="text-[#F97316] text-xs font-medium mb-1">ACTIVE PLAN</p>
             <p className="text-white text-lg font-bold">Unlimited Data</p>
             <p className="text-white/50 text-xs mt-1">No expiry · No limits</p>
           </div>
@@ -289,11 +290,11 @@ function PhoneMockup() {
           <div className="grid grid-cols-2 gap-3 mb-4">
             <div className="bg-white/5 rounded-xl p-3">
               <p className="text-white/40 text-[10px]">HIDDEN FEES</p>
-              <p className="text-[#00FF88] text-lg font-bold">KES 0</p>
+              <p className="text-[#F97316] text-lg font-bold">KES 0</p>
             </div>
             <div className="bg-white/5 rounded-xl p-3">
               <p className="text-white/40 text-[10px]">NETWORK</p>
-              <p className="text-[#06B6D4] text-lg font-bold">99.8%</p>
+              <p className="text-[#EA580C] text-lg font-bold">99.8%</p>
             </div>
           </div>
 
@@ -304,7 +305,7 @@ function PhoneMockup() {
               {[40, 65, 55, 80, 70, 90, 75].map((h, i) => (
                 <motion.div
                   key={i}
-                  className="flex-1 bg-gradient-to-t from-[#00FF88]/60 to-[#06B6D4]/60 rounded-sm"
+                    className="flex-1 bg-gradient-to-t from-[#F97316]/60 to-[#EA580C]/60 rounded-sm"
                   initial={{ height: 0 }}
                   animate={{ height: `${h}%` }}
                   transition={{ duration: 0.8, delay: 1.5 + i * 0.1 }}
@@ -315,11 +316,11 @@ function PhoneMockup() {
         </div>
 
         {/* Glow effect */}
-        <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-t from-[#00FF88]/5 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-t from-[#F97316]/5 to-transparent pointer-events-none" />
       </div>
 
       {/* Shadow */}
-      <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[200px] h-[20px] bg-[#00FF88]/10 blur-2xl rounded-full" />
+      <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[200px] h-[20px] bg-[#F97316]/10 blur-2xl rounded-full" />
     </motion.div>
   );
 }
@@ -336,7 +337,7 @@ function LiveCounter({ label, value, prefix = "" }: { label: string; value: numb
 
   return (
     <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center">
-      <p className="text-[#00FF88] text-lg sm:text-xl font-bold font-mono">
+      <p className="text-[#F97316] text-lg sm:text-xl font-bold font-mono">
         {prefix}{count.toLocaleString()}
       </p>
       <p className="text-white/50 text-xs mt-1">{label}</p>
@@ -382,7 +383,7 @@ export default function Hero() {
                       Data Shouldn&apos;t
                     </span>
                     <br />
-                    <span className="bg-gradient-to-r from-[#00FF88] via-[#06B6D4] to-[#7C3AED] bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[#F97316] via-[#EA580C] to-[#000000] bg-clip-text text-transparent">
                       Expire.
                     </span>
                   </h1>
@@ -398,7 +399,7 @@ export default function Hero() {
                   <br />
                   <span className="text-white/80">Unlimited internet.</span> No hidden fees.
                   <br />
-                  No bundle tricks. <span className="text-[#00FF88]">No nonsense.</span>
+                  No bundle tricks. <span className="text-[#F97316]">No nonsense.</span>
                 </motion.p>
 
                 {/* CTAs */}
@@ -408,9 +409,9 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  <Button variant="primary" size="lg">
+                  <GetEsimButton size="lg">
                     Get Connected
-                  </Button>
+                  </GetEsimButton>
                   <Button variant="secondary" size="lg">
                     See Plans
                   </Button>
@@ -432,7 +433,7 @@ export default function Hero() {
                       key={i}
                       className="flex items-center gap-2 text-white/50 text-sm"
                     >
-                      <item.icon className="w-4 h-4 text-[#00FF88]" />
+                      <item.icon className="w-4 h-4 text-[#F97316]" />
                       <span>{item.label}</span>
                     </div>
                   ))}
@@ -484,7 +485,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.4 + i * 0.1 }}
-                  className="hover:text-[#00FF88] transition-colors cursor-default"
+                  className="hover:text-[#F97316] transition-colors cursor-default"
                 >
                   {item}
                 </motion.span>

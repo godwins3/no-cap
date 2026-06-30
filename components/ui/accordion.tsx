@@ -18,7 +18,7 @@ export function AccordionItem({ trigger, children, className }: AccordionItemPro
     <div className={cn("border-b border-white/10", className)}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between py-5 text-left text-white hover:text-[#00FF88] transition-colors cursor-pointer"
+        className="flex w-full items-center justify-between py-5 text-left text-white hover:text-[#F97316] transition-colors cursor-pointer"
         aria-expanded={isOpen}
       >
         <span className="text-lg font-medium">{trigger}</span>

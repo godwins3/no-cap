@@ -61,24 +61,24 @@ function PhoneScreen({ scrollProgress }: { scrollProgress: any }) {
                 <p className="text-white/40 text-xs">Good evening</p>
                 <p className="text-white text-sm font-semibold">Brian 👋</p>
               </div>
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#00FF88] to-[#06B6D4] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#F97316] to-[#EA580C] flex items-center justify-center">
                 <span className="text-[10px] font-bold text-[#09090B]">B</span>
               </div>
             </div>
 
             {/* Plan card */}
             <motion.div
-              className="bg-gradient-to-br from-[#00FF88]/10 to-[#06B6D4]/5 rounded-2xl p-4 border border-[#00FF88]/20 mb-4"
+              className="bg-gradient-to-br from-[#F97316]/10 to-[#EA580C]/5 rounded-2xl p-4 border border-[#F97316]/20 mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-[#00FF88] text-[10px] font-medium">HUSTLER PLAN</p>
+                  <p className="text-[#F97316] text-[10px] font-medium">HUSTLER PLAN</p>
                   <p className="text-white text-lg font-bold">∞ Data</p>
                 </div>
-                <Sparkles className="w-5 h-5 text-[#00FF88]" />
+                <Sparkles className="w-5 h-5 text-[#F97316]" />
               </div>
               <div className="mt-3 flex items-center gap-4">
                 <div>
@@ -87,7 +87,7 @@ function PhoneScreen({ scrollProgress }: { scrollProgress: any }) {
                 </div>
                 <div>
                   <p className="text-white/30 text-[9px]">EXPIRY</p>
-                  <p className="text-[#00FF88] text-xs font-semibold">Never</p>
+                  <p className="text-[#F97316] text-xs font-semibold">Never</p>
                 </div>
                 <div>
                   <p className="text-white/30 text-[9px]">FEES</p>
@@ -116,7 +116,7 @@ function PhoneScreen({ scrollProgress }: { scrollProgress: any }) {
                 {[30, 50, 40, 70, 55, 80, 65].map((h, i) => (
                   <motion.div
                     key={i}
-                    className="flex-1 rounded-sm bg-gradient-to-t from-[#7C3AED]/60 to-[#00FF88]/60"
+                    className="flex-1 rounded-sm bg-gradient-to-t from-[#000000]/60 to-[#F97316]/60"
                     initial={{ height: 0 }}
                     whileInView={{ height: `${h}%` }}
                     transition={{ delay: 0.5 + i * 0.05, duration: 0.5 }}
@@ -129,7 +129,7 @@ function PhoneScreen({ scrollProgress }: { scrollProgress: any }) {
       </div>
 
       {/* Glow */}
-      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-[#00FF88]/10 blur-2xl rounded-full" />
+      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-[#F97316]/10 blur-2xl rounded-full" />
     </motion.div>
   );
 }
@@ -145,7 +145,7 @@ export default function AppShowcase() {
   return (
     <section className="relative py-24 sm:py-32 bg-[#09090B] overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[#06B6D4]/5 blur-[120px] rounded-full" />
+        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[#EA580C]/5 blur-[120px] rounded-full" />
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,7 +153,7 @@ export default function AppShowcase() {
           {/* Left: Features */}
           <div>
             <motion.span
-              className="inline-block px-4 py-1.5 bg-[#06B6D4]/10 border border-[#06B6D4]/20 rounded-full text-[#06B6D4] text-sm font-medium mb-6"
+              className="inline-block px-4 py-1.5 bg-[#EA580C]/10 border border-[#EA580C]/20 rounded-full text-[#EA580C] text-sm font-medium mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
             >
@@ -167,7 +167,7 @@ export default function AppShowcase() {
             >
               Everything In
               <br />
-              <span className="bg-gradient-to-r from-[#06B6D4] to-[#00FF88] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#EA580C] to-[#F97316] bg-clip-text text-transparent">
                 Your Pocket.
               </span>
             </motion.h2>
@@ -190,8 +190,8 @@ export default function AppShowcase() {
                   transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
                   className="flex gap-4 group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-[#00FF88]/30 transition-colors">
-                    <feature.icon className="w-5 h-5 text-white/60 group-hover:text-[#00FF88] transition-colors" />
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-[#F97316]/30 transition-colors">
+                    <feature.icon className="w-5 h-5 text-white/60 group-hover:text-[#F97316] transition-colors" />
                   </div>
                   <div>
                     <h3 className="text-white font-medium mb-1">{feature.title}</h3>

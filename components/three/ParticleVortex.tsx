@@ -74,9 +74,9 @@ function Vortex() {
       if (dist > 0.5) discard;
 
       // Color based on distance from center
-      vec3 green = vec3(0.0, 1.0, 0.53);
-      vec3 cyan = vec3(0.024, 0.714, 0.831);
-      vec3 purple = vec3(0.486, 0.228, 0.929);
+      vec3 green = vec3(0.976, 0.451, 0.086);
+      vec3 cyan = vec3(0.918, 0.345, 0.047);
+      vec3 purple = vec3(0.0, 0.0, 0.0);
       vec3 white = vec3(1.0);
 
       // Inner particles are brighter/whiter, outer are colored
@@ -145,7 +145,7 @@ function EnergyRing() {
     <mesh ref={ref} rotation={[Math.PI / 2, 0, 0]}>
       <torusGeometry args={[0.8, 0.02, 16, 64]} />
       <meshBasicMaterial
-        color="#00FF88"
+        color="#F97316"
         transparent
         opacity={0.3}
         blending={THREE.AdditiveBlending}

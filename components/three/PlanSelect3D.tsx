@@ -194,7 +194,7 @@ export default function PlanSelect3D({
   const plans: { type: PlanType; color: string; position: [number, number, number]; stats: { label: string; value: number }[] }[] = [
     {
       type: "bolt",
-      color: "#06B6D4",
+      color: "#EA580C",
       position: [-2.5, 0, 0],
       stats: [
         { label: "Speed", value: 30 },
@@ -204,7 +204,7 @@ export default function PlanSelect3D({
     },
     {
       type: "flame",
-      color: "#00FF88",
+      color: "#F97316",
       position: [0, 0, 0],
       stats: [
         { label: "Speed", value: 70 },
@@ -214,7 +214,7 @@ export default function PlanSelect3D({
     },
     {
       type: "crown",
-      color: "#7C3AED",
+      color: "#000000",
       position: [2.5, 0, 0],
       stats: [
         { label: "Speed", value: 100 },

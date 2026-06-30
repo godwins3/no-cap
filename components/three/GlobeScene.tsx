@@ -20,8 +20,8 @@ function Globe() {
     const colors = new Float32Array(count * 3);
     const radius = 2;
 
-    const green = new THREE.Color("#00FF88");
-    const cyan = new THREE.Color("#06B6D4");
+    const green = new THREE.Color("#F97316");
+    const cyan = new THREE.Color("#EA580C");
     const dim = new THREE.Color("#1a1a2e");
 
     for (let i = 0; i < count; i++) {
@@ -76,7 +76,7 @@ function Globe() {
       const curve = new THREE.CatmullRomCurve3([start, mid, end]);
       arcData.push({
         curve,
-        color: Math.random() > 0.5 ? "#00FF88" : "#06B6D4",
+        color: Math.random() > 0.5 ? "#F97316" : "#EA580C",
       });
     }
 
@@ -154,7 +154,7 @@ function Globe() {
       {/* Glow ring at equator */}
       <mesh rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[2.05, 0.005, 16, 100]} />
-        <meshBasicMaterial color="#00FF88" transparent opacity={0.4} />
+        <meshBasicMaterial color="#F97316" transparent opacity={0.4} />
       </mesh>
     </group>
   );
@@ -219,7 +219,7 @@ function DataPackets() {
       </bufferGeometry>
       <pointsMaterial
         size={0.04}
-        color="#00FF88"
+        color="#F97316"
         transparent
         opacity={0.8}
         blending={THREE.AdditiveBlending}

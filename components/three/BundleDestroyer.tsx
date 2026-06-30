@@ -346,7 +346,7 @@ export default function BundleDestroyer() {
             </p>
             <button
               onClick={startGame}
-              className="px-6 py-3 bg-[#00FF88] text-black font-bold rounded-xl hover:scale-105 transition-transform cursor-pointer"
+              className="px-6 py-3 bg-[#F97316] text-black font-bold rounded-xl hover:scale-105 transition-transform cursor-pointer"
             >
               Anza Game 🎮
             </button>

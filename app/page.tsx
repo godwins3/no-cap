@@ -9,17 +9,18 @@ const PlansSection = dynamic(() => import("@/components/landing/PlansSection"));
 const CoverageMap = dynamic(() => import("@/components/landing/CoverageMap"));
 const CommunitySection = dynamic(() => import("@/components/landing/CommunitySection"));
 const AppShowcase = dynamic(() => import("@/components/landing/AppShowcase"));
+const AppDemoSection = dynamic(() => import("@/components/app-demo/AppDemoSection"));
 const Testimonials = dynamic(() => import("@/components/landing/Testimonials"));
 const FAQ = dynamic(() => import("@/components/landing/FAQ"));
 const CTA = dynamic(() => import("@/components/landing/CTA"));
 const Footer = dynamic(() => import("@/components/landing/Footer"));
 const ComboCounter = dynamic(() => import("@/components/gamification/ComboCounter"));
-const FullPageHighway = dynamic(() => import("@/components/three/FullPageHighway"));
+// const FullPageHighway = dynamic(() => import("@/components/three/FullPageHighway"));
 
 export default function Home() {
   return (
     <main className="flex-1 relative">
-      <FullPageHighway />
+      {/* <FullPageHighway /> */}
       <Navbar />
       <Hero />
       <ProblemSection />
@@ -29,6 +30,7 @@ export default function Home() {
       <CoverageMap />
       <CommunitySection />
       <AppShowcase />
+      <AppDemoSection />
       <Testimonials />
       <FAQ />
       <CTA />

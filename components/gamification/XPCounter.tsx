@@ -18,7 +18,7 @@ export default function XPCounter() {
   }, [xp, prevXP]);
 
   const levelNames = ["", "Rookie", "Hustler", "Bazu", "Mwitu", "Legend"];
-  const levelColors = ["", "#06B6D4", "#00FF88", "#FFB800", "#FF4444", "#7C3AED"];
+  const levelColors = ["", "#EA580C", "#F97316", "#FFB800", "#FF4444", "#000000"];
 
   // XP needed for next level
   const thresholds = [0, 50, 150, 250, 400, 999];
@@ -29,7 +29,7 @@ export default function XPCounter() {
   return (
     <motion.div
       className="flex items-center gap-2 px-3 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full"
-      animate={flash ? { scale: [1, 1.15, 1], borderColor: ["rgba(255,255,255,0.1)", "rgba(0,255,136,0.5)", "rgba(255,255,255,0.1)"] } : {}}
+      animate={flash ? { scale: [1, 1.15, 1], borderColor: ["rgba(255,255,255,0.1)", "rgba(249,115,22,0.5)", "rgba(255,255,255,0.1)"] } : {}}
       transition={{ duration: 0.4 }}
     >
       {/* Level badge */}
@@ -72,7 +72,7 @@ export default function XPCounter() {
       {/* XP number */}
       <motion.span
         className="text-xs font-mono font-bold"
-        style={{ color: flash ? "#00FF88" : "rgba(255,255,255,0.6)" }}
+        style={{ color: flash ? "#F97316" : "rgba(255,255,255,0.6)" }}
       >
         {xp}xp
       </motion.span>

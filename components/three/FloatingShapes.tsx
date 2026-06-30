@@ -77,7 +77,7 @@ function GridParticles() {
       </bufferGeometry>
       <pointsMaterial
         size={0.02}
-        color="#7C3AED"
+        color="#000000"
         transparent
         opacity={0.4}
         blending={THREE.AdditiveBlending}
@@ -93,12 +93,12 @@ const shapes: {
   speed: number;
   color: string;
 }[] = [
-  { position: [-4, 1.5, -2], geometry: "icosahedron", speed: 0.4, color: "#00FF88" },
-  { position: [4.5, -1, -1], geometry: "octahedron", speed: 0.3, color: "#7C3AED" },
-  { position: [-3, -1.5, -3], geometry: "tetrahedron", speed: 0.5, color: "#06B6D4" },
-  { position: [3.5, 2, -2], geometry: "tetrahedron", speed: 0.35, color: "#00FF88" },
-  { position: [-5, 0, -1.5], geometry: "octahedron", speed: 0.45, color: "#7C3AED" },
-  { position: [5, 0.5, -2.5], geometry: "icosahedron", speed: 0.25, color: "#06B6D4" },
+  { position: [-4, 1.5, -2], geometry: "icosahedron", speed: 0.4, color: "#F97316" },
+  { position: [4.5, -1, -1], geometry: "octahedron", speed: 0.3, color: "#000000" },
+  { position: [-3, -1.5, -3], geometry: "tetrahedron", speed: 0.5, color: "#EA580C" },
+  { position: [3.5, 2, -2], geometry: "tetrahedron", speed: 0.35, color: "#F97316" },
+  { position: [-5, 0, -1.5], geometry: "octahedron", speed: 0.45, color: "#000000" },
+  { position: [5, 0.5, -2.5], geometry: "icosahedron", speed: 0.25, color: "#EA580C" },
 ];
 
 export default function FloatingShapes() {

@@ -23,7 +23,7 @@ const plans = [
       "Usage analytics",
     ],
     highlighted: false,
-    color: "#06B6D4",
+    color: "#EA580C",
     cta: "Start Free Trial",
   },
   {
@@ -42,7 +42,7 @@ const plans = [
       "Referral bonuses",
     ],
     highlighted: true,
-    color: "#00FF88",
+    color: "#F97316",
     cta: "Get Hustler",
   },
   {
@@ -63,7 +63,7 @@ const plans = [
       "Creator perks",
     ],
     highlighted: false,
-    color: "#7C3AED",
+    color: "#000000",
     cta: "Go Rebel",
   },
 ];
@@ -87,13 +87,13 @@ function PlanCard({
       whileHover={{ y: -8, scale: 1.02 }}
       className={`relative rounded-3xl p-[1px] ${
         plan.highlighted
-          ? "bg-gradient-to-b from-[#00FF88] via-[#06B6D4] to-[#7C3AED]"
+          ? "bg-gradient-to-b from-[#F97316] via-[#EA580C] to-[#000000]"
           : "bg-white/[0.06]"
       }`}
     >
       {/* Popular badge */}
       {plan.highlighted && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#00FF88] text-[#09090B] text-xs font-bold rounded-full">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#F97316] text-[#09090B] text-xs font-bold rounded-full">
           MOST POPULAR
         </div>
       )}
@@ -154,14 +154,14 @@ export default function PlansSection() {
   return (
     <section id="plans" data-section="plans" className="relative py-24 sm:py-32 bg-[#09090B]">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-[#00FF88]/[0.02] blur-[150px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-[#F97316]/[0.02] blur-[150px] rounded-full" />
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.span
-            className="inline-block px-4 py-1.5 bg-[#00FF88]/10 border border-[#00FF88]/20 rounded-full text-[#00FF88] text-sm font-medium mb-6"
+            className="inline-block px-4 py-1.5 bg-[#F97316]/10 border border-[#F97316]/20 rounded-full text-[#F97316] text-sm font-medium mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
           >

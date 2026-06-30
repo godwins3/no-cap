@@ -1,6 +1,5 @@
 "use client";
 
-import { Zap } from "lucide-react";
 import Link from "next/link";
 
 const footerLinks = {
@@ -46,12 +45,11 @@ export default function Footer() {
           {/* Logo & tagline */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00FF88] to-[#06B6D4] flex items-center justify-center">
-                <Zap className="w-5 h-5 text-[#09090B]" />
-              </div>
-              <span className="text-xl font-bold text-white">
-                no<span className="text-[#00FF88]">cap</span>
-              </span>
+              <img
+                src="/NoCap.png"
+                alt="NoCap"
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-white/40 text-sm leading-relaxed">
               Kenya&apos;s first digital-native telecom. No expiry. No lies. No cap.
@@ -90,7 +88,7 @@ export default function Footer() {
               <a
                 key={social.label}
                 href={social.href}
-                className="text-white/30 text-sm hover:text-[#00FF88] transition-colors"
+                className="text-white/30 text-sm hover:text-[#F97316] transition-colors"
                 aria-label={social.label}
               >
                 {social.label}

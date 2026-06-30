@@ -43,7 +43,7 @@ export default function ComparisonTable() {
 
   return (
     <section className="relative py-24 sm:py-32 bg-[#09090B]">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00FF88]/[0.01] to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#F97316]/[0.01] to-transparent pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -53,7 +53,7 @@ export default function ComparisonTable() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1.5 bg-[#00FF88]/10 border border-[#00FF88]/20 rounded-full text-[#00FF88] text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1.5 bg-[#F97316]/10 border border-[#F97316]/20 rounded-full text-[#F97316] text-sm font-medium mb-6">
               The Difference
             </span>
           </motion.div>
@@ -64,7 +64,7 @@ export default function ComparisonTable() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             Traditional Telcos vs{" "}
-            <span className="text-[#00FF88]">Us</span>
+            <span className="text-[#F97316]">Us</span>
           </motion.h2>
           <motion.p
             className="text-white/50 text-lg max-w-2xl mx-auto"
@@ -90,7 +90,7 @@ export default function ComparisonTable() {
               <span className="text-red-400/80 text-sm font-medium">Traditional Telcos</span>
             </div>
             <div className="text-center">
-              <span className="text-[#00FF88] text-sm font-medium">nocap</span>
+              <span className="text-[#F97316] text-sm font-medium">nocap</span>
             </div>
           </div>
 
@@ -113,7 +113,7 @@ export default function ComparisonTable() {
                 </span>
               </div>
               <div className="flex items-center justify-center gap-2">
-                <Check className="w-4 h-4 text-[#00FF88] flex-shrink-0" />
+                <Check className="w-4 h-4 text-[#F97316] flex-shrink-0" />
                 <span className="text-white/70 text-xs sm:text-sm text-center">
                   {row.ours}
                 </span>

@@ -174,7 +174,7 @@ function Road({ curve }: { curve: THREE.CatmullRomCurve3 }) {
       </mesh>
       {/* Road edge glow */}
       <mesh geometry={roadGeometry}>
-        <meshBasicMaterial color="#00FF88" transparent opacity={0.03} side={THREE.DoubleSide} />
+        <meshBasicMaterial color="#F97316" transparent opacity={0.03} side={THREE.DoubleSide} />
       </mesh>
       {/* Flag stripes */}
       {stripeGeometries.map((geo, i) => (
@@ -240,14 +240,14 @@ export default function FullPageHighway() {
 
   // Matatu fleet config
   const matatus = useMemo(() => [
-    { offset: 0.0, speed: 0.03, color: "#00FF88", direction: 1 as const },
+    { offset: 0.0, speed: 0.03, color: "#F97316", direction: 1 as const },
     { offset: 0.15, speed: 0.025, color: "#FFB800", direction: 1 as const },
-    { offset: 0.3, speed: 0.035, color: "#06B6D4", direction: -1 as const },
+    { offset: 0.3, speed: 0.035, color: "#EA580C", direction: -1 as const },
     { offset: 0.45, speed: 0.028, color: "#FF4444", direction: 1 as const },
-    { offset: 0.6, speed: 0.032, color: "#7C3AED", direction: -1 as const },
-    { offset: 0.75, speed: 0.027, color: "#00FF88", direction: 1 as const },
+    { offset: 0.6, speed: 0.032, color: "#000000", direction: -1 as const },
+    { offset: 0.75, speed: 0.027, color: "#F97316", direction: 1 as const },
     { offset: 0.88, speed: 0.03, color: "#FFB800", direction: -1 as const },
-    { offset: 0.12, speed: 0.022, color: "#06B6D4", direction: 1 as const },
+    { offset: 0.12, speed: 0.022, color: "#EA580C", direction: 1 as const },
   ], []);
 
   return (

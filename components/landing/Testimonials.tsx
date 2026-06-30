@@ -63,7 +63,7 @@ export default function Testimonials() {
   return (
     <section className="relative py-24 sm:py-32 bg-[#09090B] overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#00FF88]/3 blur-[150px] rounded-full" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#F97316]/3 blur-[150px] rounded-full" />
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -126,7 +126,7 @@ export default function Testimonials() {
               >
                 <div className="h-full bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 hover:border-white/10 transition-colors">
                   {/* Quote icon */}
-                  <Quote className="w-8 h-8 text-[#00FF88]/20 mb-4" />
+                  <Quote className="w-8 h-8 text-[#F97316]/20 mb-4" />
 
                   {/* Stars */}
                   <div className="flex gap-1 mb-4">
@@ -142,7 +142,7 @@ export default function Testimonials() {
 
                   {/* Author */}
                   <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00FF88]/20 to-[#7C3AED]/20 flex items-center justify-center text-sm font-bold text-white">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#F97316]/20 to-[#000000]/20 flex items-center justify-center text-sm font-bold text-white">
                       {testimonial.avatar}
                     </div>
                     <div>
@@ -163,7 +163,7 @@ export default function Testimonials() {
               key={i}
               onClick={() => setCurrentIndex(Math.min(i, maxIndex))}
               className={`w-2 h-2 rounded-full transition-all ${
-                i === currentIndex ? "bg-[#00FF88] w-6" : "bg-white/20"
+                i === currentIndex ? "bg-[#F97316] w-6" : "bg-white/20"
               }`}
               aria-label={`Go to testimonial ${i + 1}`}
             />

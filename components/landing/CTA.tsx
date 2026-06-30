@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import dynamic from "next/dynamic";
 
+const GetEsimButton = dynamic(() => import("@/components/landing/GetEsimButton"), { ssr: false });
+
 // const ParticleVortex = dynamic(() => import("@/components/three/ParticleVortex"), { ssr: false });
 
 export default function CTA() {
@@ -22,7 +24,7 @@ export default function CTA() {
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full"
           style={{
             background:
-              "radial-gradient(ellipse, rgba(0,255,136,0.08) 0%, rgba(124,58,237,0.04) 40%, transparent 70%)",
+              "radial-gradient(ellipse, rgba(249,115,22,0.1) 0%, rgba(234,88,12,0.05) 40%, transparent 70%)",
           }}
           animate={{
             scale: [1, 1.1, 1],
@@ -34,7 +36,7 @@ export default function CTA() {
         {Array.from({ length: 15 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 rounded-full bg-[#00FF88]/40"
+            className="absolute w-1 h-1 rounded-full bg-orange-500/40"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -59,7 +61,7 @@ export default function CTA() {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#00FF88]/10 border border-[#00FF88]/20 rounded-full text-[#00FF88] text-sm font-medium mb-8"
+            className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-500/10 border border-orange-500/20 rounded-full text-orange-400 text-sm font-medium mb-8"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
@@ -70,7 +72,7 @@ export default function CTA() {
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Join The Data
             <br />
-            <span className="bg-gradient-to-r from-[#00FF88] via-[#06B6D4] to-[#7C3AED] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
               Revolution.
             </span>
           </h2>
@@ -81,10 +83,10 @@ export default function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="primary" size="lg" className="group">
+            <GetEsimButton size="lg" className="group">
               Get eSIM
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </GetEsimButton>
             <Button variant="secondary" size="lg">
               Join Waitlist
             </Button>

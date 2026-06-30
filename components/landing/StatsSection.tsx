@@ -78,7 +78,7 @@ export default function StatsSection() {
     <section data-section="stats" className="relative py-24 sm:py-32 bg-[#09090B] overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#7C3AED]/5 blur-[120px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#F97316]/5 blur-[120px] rounded-full" />
       </div>
       <FloatingShapes />
 
@@ -86,7 +86,7 @@ export default function StatsSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.span
-            className="inline-block px-4 py-1.5 bg-[#7C3AED]/10 border border-[#7C3AED]/20 rounded-full text-[#7C3AED] text-sm font-medium mb-6"
+            className="inline-block px-4 py-1.5 bg-[#F97316]/10 border border-[#F97316]/20 rounded-full text-[#F97316] text-sm font-medium mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
           >
@@ -114,8 +114,8 @@ export default function StatsSection() {
             >
               <div className="relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-6 sm:p-8 hover:border-white/10 transition-all">
                 {/* Icon */}
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#00FF88]/10 to-[#7C3AED]/10 mb-4">
-                  <stat.icon className="w-6 h-6 text-[#00FF88]" />
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#F97316]/10 to-[#EA580C]/10 mb-4">
+                  <stat.icon className="w-6 h-6 text-[#F97316]" />
                 </div>
 
                 {/* Value */}
@@ -132,7 +132,7 @@ export default function StatsSection() {
                 <p className="text-white/40 text-sm">{stat.label}</p>
 
                 {/* Hover glow */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-[#00FF88]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-[#F97316]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               </div>
             </motion.div>
           ))}

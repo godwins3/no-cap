@@ -25,14 +25,14 @@ export default function CoverageMap() {
   return (
     <section id="coverage" data-section="coverage" className="relative py-24 sm:py-32 bg-[#09090B]">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-[#06B6D4]/5 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-[#EA580C]/5 blur-[120px] rounded-full" />
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.span
-            className="inline-block px-4 py-1.5 bg-[#06B6D4]/10 border border-[#06B6D4]/20 rounded-full text-[#06B6D4] text-sm font-medium mb-6"
+            className="inline-block px-4 py-1.5 bg-[#EA580C]/10 border border-[#EA580C]/20 rounded-full text-[#EA580C] text-sm font-medium mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
           >
@@ -82,7 +82,7 @@ export default function CoverageMap() {
                   onClick={() => setSelectedCity(i)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer ${
                     i === selectedCity
-                      ? "bg-[#00FF88] text-[#09090B]"
+                      ? "bg-[#F97316] text-[#09090B]"
                       : "bg-white/5 text-white/50 hover:text-white hover:bg-white/10"
                   }`}
                 >
@@ -94,17 +94,17 @@ export default function CoverageMap() {
             {/* Stats cards */}
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5">
-                <Signal className="w-5 h-5 text-[#00FF88] mb-2" />
+                <Signal className="w-5 h-5 text-[#F97316] mb-2" />
                 <p className="text-2xl font-bold text-white">{city.coverage}%</p>
                 <p className="text-white/40 text-sm">Coverage</p>
               </div>
               <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5">
-                <Wifi className="w-5 h-5 text-[#06B6D4] mb-2" />
+                <Wifi className="w-5 h-5 text-[#EA580C] mb-2" />
                 <p className="text-2xl font-bold text-white">{city.speed}</p>
                 <p className="text-white/40 text-sm">Avg Speed</p>
               </div>
               <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5">
-                <Activity className="w-5 h-5 text-[#7C3AED] mb-2" />
+                <Activity className="w-5 h-5 text-[#000000] mb-2" />
                 <p className="text-2xl font-bold text-white">{city.status}</p>
                 <p className="text-white/40 text-sm">Network Health</p>
               </div>

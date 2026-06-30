@@ -26,9 +26,9 @@ export default function AchievementToast() {
             className="relative pointer-events-auto"
           >
             {/* Sticker-style achievement card */}
-            <div className="relative bg-[#1a1a2e] border-2 border-[#00FF88] rounded-2xl p-4 pr-6 shadow-[0_0_30px_rgba(0,255,136,0.2)] min-w-[260px]">
+            <div className="relative bg-[#1a1a2e] border-2 border-[#F97316] rounded-2xl p-4 pr-6 shadow-[0_0_30px_rgba(249,115,22,0.2)] min-w-[260px]">
               {/* Sticker corner fold */}
-              <div className="absolute -top-1 -right-1 w-6 h-6 bg-[#00FF88] rounded-bl-xl rounded-tr-xl" />
+              <div className="absolute -top-1 -right-1 w-6 h-6 bg-[#F97316] rounded-bl-xl rounded-tr-xl" />
 
               <div className="flex items-center gap-3">
                 {/* Icon */}
@@ -51,7 +51,7 @@ export default function AchievementToast() {
                   </p>
                   {/* XP reward */}
                   <motion.p
-                    className="text-[#00FF88] text-xs font-bold font-mono mt-1"
+                    className="text-[#F97316] text-xs font-bold font-mono mt-1"
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
@@ -63,7 +63,7 @@ export default function AchievementToast() {
 
               {/* Progress bar animation */}
               <motion.div
-                className="absolute bottom-0 left-0 h-0.5 bg-[#00FF88] rounded-b-2xl"
+                className="absolute bottom-0 left-0 h-0.5 bg-[#F97316] rounded-b-2xl"
                 initial={{ width: "100%" }}
                 animate={{ width: "0%" }}
                 transition={{ duration: 3.5, ease: "linear" }}

@@ -168,7 +168,7 @@ function KenyanHighway() {
       {/* Edge glow */}
       <mesh geometry={roadGeometry}>
         <meshBasicMaterial
-          color="#00FF88"
+          color="#F97316"
           transparent
           opacity={0.05}
           side={THREE.DoubleSide}
@@ -183,7 +183,7 @@ function KenyanHighway() {
         >
           <sphereGeometry args={[0.04, 8, 8]} />
           <meshBasicMaterial
-            color={i % 2 === 0 ? "#00FF88" : "#06B6D4"}
+            color={i % 2 === 0 ? "#F97316" : "#EA580C"}
             transparent
             opacity={0.9}
           />
@@ -191,7 +191,7 @@ function KenyanHighway() {
       ))}
 
       {/* Ambient road glow */}
-      <pointLight position={[0, 0, 1]} color="#00FF88" intensity={0.3} distance={5} />
+      <pointLight position={[0, 0, 1]} color="#F97316" intensity={0.3} distance={5} />
     </group>
   );
 }

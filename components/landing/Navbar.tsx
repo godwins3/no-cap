@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 
 const XPCounter = dynamic(() => import("@/components/gamification/XPCounter"), { ssr: false });
+const GetEsimButton = dynamic(() => import("@/components/landing/GetEsimButton"), { ssr: false });
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -39,13 +40,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <a href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00FF88] to-[#06B6D4] flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(0,255,136,0.4)] transition-shadow">
-              <Zap className="w-5 h-5 text-[#09090B]" />
-            </div>
-            <span className="text-xl font-bold text-white">
-              no<span className="text-[#00FF88]">cap</span>
-            </span>
+          <a href="/" className="flex items-center group">
+            <img
+              src="/NoCap.png"
+              alt="NoCap"
+              className="h-10 w-auto"
+            />
           </a>
 
           <div className="hidden lg:flex items-center gap-8">
@@ -56,7 +56,7 @@ export default function Navbar() {
                 className="text-sm text-white/60 hover:text-white transition-colors relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00FF88] group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#F97316] group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </div>
@@ -66,9 +66,7 @@ export default function Navbar() {
             <Button variant="ghost" size="sm">
               Join Waitlist
             </Button>
-            <Button variant="primary" size="sm">
-              Get eSIM
-            </Button>
+            <GetEsimButton size="sm" />
           </div>
 
           <button
@@ -104,9 +102,7 @@ export default function Navbar() {
                 <Button variant="secondary" size="md" className="w-full">
                   Join Waitlist
                 </Button>
-                <Button variant="primary" size="md" className="w-full">
-                  Get eSIM
-                </Button>
+                <GetEsimButton size="md" className="w-full" />
               </div>
             </div>
           </motion.div>

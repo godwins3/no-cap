@@ -9,19 +9,19 @@ const features = [
     icon: Megaphone,
     title: "Campus Ambassadors",
     description: "Rep nocap on your campus. Get free data, merch, and exclusive access.",
-    color: "#00FF88",
+    color: "#F97316",
   },
   {
     icon: Star,
     title: "Creator Partnerships",
     description: "Content creators get special plans and earn from referrals.",
-    color: "#7C3AED",
+    color: "#000000",
   },
   {
     icon: Gift,
     title: "Community Rewards",
     description: "Earn points for referrals, feedback, and engagement. Redeem for data.",
-    color: "#06B6D4",
+    color: "#EA580C",
   },
 ];
 
@@ -53,14 +53,14 @@ export default function CommunitySection() {
   return (
     <section id="community" className="relative py-24 sm:py-32 bg-[#09090B]">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#7C3AED]/5 blur-[120px] rounded-full" />
+        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#F97316]/5 blur-[120px] rounded-full" />
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.span
-            className="inline-block px-4 py-1.5 bg-[#7C3AED]/10 border border-[#7C3AED]/20 rounded-full text-[#7C3AED] text-sm font-medium mb-6"
+            className="inline-block px-4 py-1.5 bg-[#F97316]/10 border border-[#F97316]/20 rounded-full text-[#F97316] text-sm font-medium mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
           >
@@ -73,7 +73,7 @@ export default function CommunitySection() {
             transition={{ delay: 0.1 }}
           >
             Built For Us.{" "}
-            <span className="bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#F97316] to-[#EA580C] bg-clip-text text-transparent">
               By Us.
             </span>
           </motion.h2>
@@ -127,7 +127,7 @@ export default function CommunitySection() {
               className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-5"
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00FF88]/30 to-[#7C3AED]/30 flex items-center justify-center text-sm font-bold text-white">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#F97316]/30 to-[#000000]/30 flex items-center justify-center text-sm font-bold text-white">
                   {post.avatar}
                 </div>
                 <div>

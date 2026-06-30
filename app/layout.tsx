@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     "digital telecom",
     "nocap",
   ],
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/icon.jpg",
+    apple: "/icon.jpg",
+  },
   openGraph: {
     title: "nocap — Data Shouldn't Expire",
     description:
@@ -46,6 +51,11 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#09090B] text-white">
         {children}
         <GameProviders />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}`,
+          }}
+        />
       </body>
     </html>
   );

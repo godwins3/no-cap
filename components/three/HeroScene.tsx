@@ -125,10 +125,10 @@ function DataSphere() {
       float dist = length(center);
       if (dist > 0.5) discard;
 
-      // Neon green to cyan gradient based on distance
-      vec3 green = vec3(0.0, 1.0, 0.53); // #00FF88
-      vec3 cyan = vec3(0.024, 0.714, 0.831); // #06B6D4
-      vec3 purple = vec3(0.486, 0.228, 0.929); // #7C3AED
+      // Neon orange to dark orange gradient based on distance
+      vec3 green = vec3(0.976, 0.451, 0.086); // #F97316
+      vec3 cyan = vec3(0.918, 0.345, 0.047); // #EA580C
+      vec3 purple = vec3(0.0, 0.0, 0.0); // #000000
 
       float colorMix = sin(vRandom * 6.28 + uTime * 0.5) * 0.5 + 0.5;
       vec3 color = mix(green, mix(cyan, purple, step(0.7, vRandom)), colorMix);
@@ -209,7 +209,7 @@ function OrbitRing() {
   return (
     <mesh ref={ref}>
       <torusGeometry args={[3.2, 0.01, 16, 100]} />
-      <meshBasicMaterial color="#00FF88" transparent opacity={0.3} />
+      <meshBasicMaterial color="#F97316" transparent opacity={0.3} />
     </mesh>
   );
 }
@@ -226,7 +226,7 @@ function OrbitRing2() {
   return (
     <mesh ref={ref}>
       <torusGeometry args={[3.5, 0.008, 16, 100]} />
-      <meshBasicMaterial color="#7C3AED" transparent opacity={0.2} />
+      <meshBasicMaterial color="#000000" transparent opacity={0.2} />
     </mesh>
   );
 }
